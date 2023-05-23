@@ -44,7 +44,7 @@ const Testimonials = () => {
                 <div className="px-24 text-center font-inter">
                   <div className="flex-col flex items-center mb-10">
                     <Rating
-                      style={{ maxWidth: 250 }}
+                      style={{ maxWidth: 270 }}
                       value={review.rating}
                       itemStyles={myStyles}
                       readOnly

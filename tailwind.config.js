@@ -19,6 +19,7 @@ export default {
     extend: {
       backgroundImage: {
         "featured-img": "url('./src/assets/home/featured.jpg')",
+        "chef-service": "url('./src/assets/home/chef-service.jpg')",
       },
     },
   },
