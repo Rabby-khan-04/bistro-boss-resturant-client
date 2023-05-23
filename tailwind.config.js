@@ -2,6 +2,10 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      cinzel: ["Cinzel", "serif"],
+      inter: ["Inter", "sans-serif"],
+    },
     colors: {
       darkBlue: "#111827",
       darkGray: "#1F2937",
