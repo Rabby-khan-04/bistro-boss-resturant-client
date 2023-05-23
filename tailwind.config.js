@@ -5,6 +5,7 @@ export default {
     fontFamily: {
       cinzel: ["Cinzel", "serif"],
       inter: ["Inter", "sans-serif"],
+      raleway: ["Raleway", "sans-serif"],
     },
     colors: {
       darkBlue: "#111827",

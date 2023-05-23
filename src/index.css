@@ -5,3 +5,10 @@
 .container {
   @apply max-w-[1320px] mx-auto px-5 xl:px-0;
 }
+
+.black__btn {
+  @apply border-0 border-b-4 border-[#1F2937] rounded-lg text-xl px-8 py-5 text-[#1F2937] uppercase hover:bg-[#1F2937] hover:text-white transition-all duration-300;
+}
+.white__btn {
+  @apply border-0 border-b-4 border-white rounded-lg text-xl px-8 py-5 text-white uppercase hover:bg-white hover:text-[#1F2937] transition-all duration-300;
+}
