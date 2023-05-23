@@ -11,7 +11,7 @@ const MenuItem = ({ menu }) => {
       />
       <div>
         <div className="flex justify-between items-center">
-          <h3 className="text-xl font-cinzel font-medium text-neutral">
+          <h3 className="text-xl font-cinzel font-medium text-neutral uppercase">
             {name} ------------------
           </h3>
           <p className="font-inter font-medium text-xl text-golden">

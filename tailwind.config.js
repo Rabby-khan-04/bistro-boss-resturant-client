@@ -14,8 +14,13 @@ export default {
       gray: "#E8E8E8",
       golden: "#BB8506",
       "dark-gray": "#737373",
+      rating: "#CD9003",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "featured-img": "url('./src/assets/home/featured.jpg')",
+      },
+    },
   },
   daisyui: {
     themes: [

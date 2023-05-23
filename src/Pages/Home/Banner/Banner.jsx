@@ -12,7 +12,7 @@ const Banner = () => {
   const sliderImages = [slide1, slide2, slide3, slide4, slide5, slide6];
   return (
     <section>
-      <Carousel showStatus={false} autoPlay={true}>
+      <Carousel showStatus={false} autoPlay={true} infiniteLoop={true}>
         {sliderImages.map((image, index) => (
           <div key={index} className="slider__img__container h-[800px]">
             <img src={image} className="h-full object-cover object-center" />
