@@ -12,3 +12,10 @@
 .white__btn {
   @apply border-0 border-b-4 border-white rounded-lg text-xl px-8 py-5 text-white uppercase hover:bg-white hover:text-[#1F2937] transition-all duration-300;
 }
+.golden__btn {
+  @apply border-0 border-b-4 bg-[#E8E8E8] border-golden rounded-lg text-xl px-8 py-5 text-golden uppercase hover:bg-[#1F2937] hover:text-golden hover:border-[#1F2937] transition-all duration-300;
+}
+
+.golden__btn__active {
+  @apply border-0 border-b-4 border-[#1F2937] bg-[#1F2937] rounded-lg text-xl px-8 py-5 text-golden uppercase hover:bg-[#E8E8E8] hover:text-[#1F2937] hover:border-golden transition-all duration-300;
+}
