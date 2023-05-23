@@ -9,27 +9,15 @@ import slide5 from "../../../assets/home/05.png";
 import slide6 from "../../../assets/home/06.png";
 
 const Banner = () => {
+  const sliderImages = [slide1, slide2, slide3, slide4, slide5, slide6];
   return (
     <section>
-      <Carousel showStatus={false}>
-        <div>
-          <img src={slide1} />
-        </div>
-        <div>
-          <img src={slide2} />
-        </div>
-        <div>
-          <img src={slide3} />
-        </div>
-        <div>
-          <img src={slide4} />
-        </div>
-        <div>
-          <img src={slide5} />
-        </div>
-        <div>
-          <img src={slide6} />
-        </div>
+      <Carousel showStatus={false} autoPlay={true}>
+        {sliderImages.map((image, index) => (
+          <div key={index} className="slider__img__container h-[800px]">
+            <img src={image} className="h-full object-cover object-center" />
+          </div>
+        ))}
       </Carousel>
     </section>
   );

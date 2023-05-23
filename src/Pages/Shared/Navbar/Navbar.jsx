@@ -36,7 +36,7 @@ const Navbar = () => {
   const headerScrollStyle = {
     backgroundColor: "#ffffff",
     color: "black",
-    boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.08)",
+    boxShadow: "0px 0px 7px 0px rgba(0, 0, 0, 0.15)",
   };
   const headerFixedStyle = {
     backgroundColor: "#0000004D",
