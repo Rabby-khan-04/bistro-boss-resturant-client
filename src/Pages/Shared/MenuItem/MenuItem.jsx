@@ -14,8 +14,8 @@ const MenuItem = ({ menu }) => {
           <h3 className="text-xl font-cinzel font-medium text-neutral uppercase">
             {name} ------------------
           </h3>
-          <p className="font-inter font-medium text-xl text-golden">
-            $ {price}
+          <p className="font-inter font-medium text-xl text-golden ">
+            ${price}
           </p>
         </div>
         <p className="text-dark-gray font-inter">{recipe}</p>
