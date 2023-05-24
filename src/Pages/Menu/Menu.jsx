@@ -4,6 +4,8 @@ import PageCover from "../Shared/PageCover/PageCover";
 import bannerImg from "../../assets/menu/banner3.jpg";
 import desertImg from "../../assets/menu/dessert-bg.jpeg";
 import pizzaImg from "../../assets/menu/pizza-bg.jpg";
+import saladImg from "../../assets/menu/salad-bg.jpg";
+import soupImg from "../../assets/menu/soup-bg.jpg";
 import SectionCover from "../Shared/SectionCover/SectionCover";
 import { useMenu } from "../../Hooks/useMenu";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
@@ -31,29 +33,40 @@ const Menu = () => {
         <div className="container">
           <SectionTitle subHeading={"Don't miss"} heading={"TODAY'S OFFER"} />
           <MenuCategory menus={offered} />
-          <div className="text-center">
-            <button className="black__btn">ORDER YOUR FAVOURITE FOOD</button>
-          </div>
         </div>
       </section>
-      <SectionCover
+
+      <MenuCategory
+        menus={desert}
+        heading={"Dessert"}
         img={desertImg}
-        heading={"DESSERTS"}
         subHeading={
           "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       />
-      <section className="pt-28 pb-12">
-        <div className="container">
-          <MenuCategory menus={desert} />
-          <div className="text-center">
-            <button className="black__btn">ORDER YOUR FAVOURITE FOOD</button>
-          </div>
-        </div>
-      </section>
-      <SectionCover
+
+      <MenuCategory
+        menus={pizza}
         img={pizzaImg}
-        heading={"DESSERTS"}
+        heading={"Pizza"}
+        subHeading={
+          "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        }
+      />
+
+      <MenuCategory
+        menus={salad}
+        img={saladImg}
+        heading={"Salad"}
+        subHeading={
+          "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        }
+      />
+
+      <MenuCategory
+        menus={soup}
+        img={soupImg}
+        heading={"Soup"}
         subHeading={
           "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
