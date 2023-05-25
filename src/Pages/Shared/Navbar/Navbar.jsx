@@ -20,6 +20,9 @@ const Navbar = () => {
       <li>
         <Link to="/shop/Pizza">Our Shop</Link>
       </li>
+      <li>
+        <Link to="/login">Login</Link>
+      </li>
     </>
   );
 
@@ -42,8 +45,6 @@ const Navbar = () => {
     backgroundColor: "#0000004D",
     color: "white",
   };
-
-  console.log(scrollY);
 
   return (
     <header

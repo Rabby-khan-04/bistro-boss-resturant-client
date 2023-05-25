@@ -16,11 +16,13 @@ export default {
       golden: "#BB8506",
       "dark-gray": "#737373",
       rating: "#CD9003",
+      btnBg: "#D1A054",
     },
     extend: {
       backgroundImage: {
         "featured-img": "url('./src/assets/home/featured.jpg')",
         "chef-service": "url('./src/assets/home/chef-service.jpg')",
+        loginBg: "url('./src/assets/others/authentication.png')",
       },
     },
   },
