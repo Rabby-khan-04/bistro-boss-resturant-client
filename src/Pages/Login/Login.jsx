@@ -5,11 +5,13 @@ import {
   LoadCanvasTemplateNoReload,
   validateCaptcha,
 } from "react-simple-captcha";
-
 import loginImg from "../../assets/others/authentication2.png";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 const Login = () => {
   const captchRef = useRef(null);
   const [disabledBtn, setDisabledBtn] = useState(true);
@@ -17,12 +19,21 @@ const Login = () => {
     loadCaptchaEnginge(6);
   }, []);
 
+  const { signIn } = useContext(AuthContext);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    const user_captcha_value = form.captch.value;
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleValidateCaptch = () => {
