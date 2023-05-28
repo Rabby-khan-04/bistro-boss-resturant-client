@@ -1,8 +1,23 @@
 import React, { useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { GiShoppingCart } from "react-icons/gi";
+import { useCart } from "../../../Hooks/useCart";
 
 const Navbar = () => {
   const [scrollY, setScrollY] = useState(0);
+  const { user, logOutUser } = useContext(AuthContext);
+  const [cart] = useCart();
+
+  const handleLogout = () => {
+    logOutUser()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const navItem = (
     <>
       <li>
@@ -21,8 +36,30 @@ const Navbar = () => {
         <Link to="/shop/Pizza">Our Shop</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <Link to="secret">Secret</Link>
       </li>
+      <li className="mr-4">
+        <Link to="/" className="py-0 relative">
+          <GiShoppingCart className="text-4xl" />
+          <div className="h-7 w-7 flex items-center justify-center rounded-full bg-golden absolute bottom-0 right-0 p-0">
+            <p className="text-sm">{cart.length}</p>
+          </div>
+        </Link>
+      </li>
+      {user ? (
+        <li>
+          <button
+            onClick={handleLogout}
+            className="btn btn-secondary text-black"
+          >
+            Logout
+          </button>
+        </li>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      )}
     </>
   );
 

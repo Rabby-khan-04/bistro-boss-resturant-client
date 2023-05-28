@@ -16,7 +16,7 @@ export default {
       golden: "#BB8506",
       "dark-gray": "#737373",
       rating: "#CD9003",
-      btnBg: "#D1A054",
+      gold: "#D1A054",
     },
     extend: {
       backgroundImage: {

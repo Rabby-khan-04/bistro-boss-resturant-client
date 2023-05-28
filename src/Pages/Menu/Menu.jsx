@@ -10,6 +10,7 @@ import SectionCover from "../Shared/SectionCover/SectionCover";
 import { useMenu } from "../../Hooks/useMenu";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import MenuCategory from "./MenuCategory/MenuCategory";
+import MenuCard from "../Shared/MenuCard/MenuCard";
 
 const Menu = () => {
   const [menus] = useMenu();
