@@ -19,3 +19,7 @@
 .golden__btn__active {
   @apply border-0 border-b-4 border-[#1F2937] bg-[#1F2937] rounded-lg text-xl px-8 py-5 text-golden uppercase hover:bg-[#E8E8E8] hover:text-[#1F2937] hover:border-golden transition-all duration-300;
 }
+
+.db__container {
+  @apply max-w-7xl mx-auto;
+}

@@ -39,7 +39,7 @@ const Navbar = () => {
         <Link to="secret">Secret</Link>
       </li>
       <li className="mr-4">
-        <Link to="/" className="py-0 relative">
+        <Link to="/dashboard/mycart" className="py-0 relative">
           <GiShoppingCart className="text-4xl" />
           <div className="h-7 w-7 flex items-center justify-center rounded-full bg-golden absolute bottom-0 right-0 p-0">
             <p className="text-sm">{cart.length}</p>
