@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { useCart } from "../../Hooks/useCart";
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import { useCart } from "../../../Hooks/useCart";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import Swal from "sweetalert2";
 

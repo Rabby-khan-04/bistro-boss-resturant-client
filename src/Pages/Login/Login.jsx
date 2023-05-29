@@ -13,6 +13,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   const [disabledBtn, setDisabledBtn] = useState(true);
@@ -70,7 +71,7 @@ const Login = () => {
       <Helmet>
         <title>Bistro Boss | Login</title>
       </Helmet>
-      <section className="bg-loginBg py-28">
+      <section className="bg-loginBg py-28 h-screen">
         <div className="container">
           <div className="grid grid-cols-5">
             <div className="col-span-3">
@@ -131,6 +132,7 @@ const Login = () => {
                   New here? Create a New Account
                 </Link>
               </div>
+              <SocialLogin />
             </div>
           </div>
         </div>

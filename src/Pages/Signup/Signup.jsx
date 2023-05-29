@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -16,9 +17,23 @@ const Signup = () => {
     const password = form.password.value;
     createUser(email, password)
       .then((result) => {
+        form.reset();
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate("/");
+        fetch("http://localhost:3000/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, password }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.insertedId) {
+              navigate("/");
+            }
+          });
       })
       .catch((error) => {
         console.log(error);
@@ -86,6 +101,7 @@ const Signup = () => {
                   Already registered? Go to log in
                 </Link>
               </div>
+              <SocialLogin />
             </div>
             <div className="col-span-3 text-right">
               <img src={loginImg} className="inline-block ml-auto" alt="" />
