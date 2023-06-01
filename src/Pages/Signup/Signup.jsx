@@ -2,13 +2,12 @@ import React from "react";
 import loginImg from "../../assets/others/authentication2.png";
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { useAuth } from "../../Hooks/useAuth";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const { createUser } = useContext(AuthContext);
+  const { createUser } = useAuth();
   const handleSignup = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -25,7 +24,7 @@ const Signup = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name, email, password }),
+          body: JSON.stringify({ name: name, email: email }),
         })
           .then((res) => res.json())
           .then((data) => {

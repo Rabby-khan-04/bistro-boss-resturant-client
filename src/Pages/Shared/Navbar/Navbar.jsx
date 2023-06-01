@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../Provider/AuthProvider";
 import { GiShoppingCart } from "react-icons/gi";
 import { useCart } from "../../../Hooks/useCart";
+import { useAuth } from "../../../Hooks/useAuth";
 
 const Navbar = () => {
   const [scrollY, setScrollY] = useState(0);
-  const { user, logOutUser } = useContext(AuthContext);
-  const [cart] = useCart();
+  const { user, logOutUser } = useAuth();
+  const [cart, refetch, isLoading] = useCart();
+  console.log("loading", isLoading);
 
   const handleLogout = () => {
     logOutUser()
@@ -42,7 +42,7 @@ const Navbar = () => {
         <Link to="/dashboard/mycart" className="py-0 relative">
           <GiShoppingCart className="text-4xl" />
           <div className="h-7 w-7 flex items-center justify-center rounded-full bg-golden absolute bottom-0 right-0 p-0">
-            <p className="text-sm">{cart.length}</p>
+            <p className="text-sm">{cart.length || 0}</p>
           </div>
         </Link>
       </li>

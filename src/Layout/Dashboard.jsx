@@ -10,11 +10,21 @@ import { MdShoppingBag, MdOutlineRestaurant } from "react-icons/md";
 import { HiEnvelope, HiUserGroup } from "react-icons/hi2";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { useCart } from "../Hooks/useCart";
+import { useAdmin } from "../Hooks/useAdmin";
 
 const Dashboard = () => {
   const [cart] = useCart();
+  const [isAdmin, isAdminLoading] = useAdmin();
 
-  const isAdmin = true;
+  // const isAdmin = true;
+
+  if (isAdminLoading) {
+    return (
+      <div className=" flex justify-center items-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -41,7 +51,7 @@ const Dashboard = () => {
               </p>
             </div>
             <ul className="text-neutral text-xl font-cinzel font-medium space-y-6">
-              {isAdmin ? (
+              {isAdmin?.admin ? (
                 <>
                   <li>
                     <NavLink

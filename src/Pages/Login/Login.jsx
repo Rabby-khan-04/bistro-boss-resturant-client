@@ -8,12 +8,11 @@ import {
 import loginImg from "../../assets/others/authentication2.png";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { useAuth } from "../../Hooks/useAuth";
 
 const Login = () => {
   const [disabledBtn, setDisabledBtn] = useState(true);
@@ -25,7 +24,7 @@ const Login = () => {
   const location = useLocation();
   const from = location?.state?.from.pathname || "/";
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn } = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();

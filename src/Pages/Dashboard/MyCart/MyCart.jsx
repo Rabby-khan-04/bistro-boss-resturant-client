@@ -6,8 +6,10 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import Swal from "sweetalert2";
 
 const MyCart = () => {
-  const [cart, refetch] = useCart();
+  const [cart, refetch, isLoading] = useCart();
   const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+
+  console.log(isLoading);
 
   const handleDelete = (id) => {
     Swal.fire({

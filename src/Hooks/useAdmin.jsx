@@ -1,19 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "./useAuth";
 
-export const useCart = (email) => {
+export const useAdmin = () => {
+  const { user } = useAuth();
   const token = localStorage.getItem("user-access-token");
-  const { user, loading } = useAuth();
-  const {
-    refetch,
-    data: cart = [],
-    isLoading,
-  } = useQuery({
-    queryKey: ["carts", user?.email],
-    enabled: !loading,
+  const { data: isAdmin, isLoading: isAdminLoading } = useQuery({
+    queryKey: ["isAdmin", user?.email],
     queryFn: async () => {
       const response = await fetch(
-        `http://localhost:3000/carts?email=${user?.email}`,
+        `http://localhost:3000/users/admin/${user?.email}`,
         {
           headers: {
             authorization: `bearer ${token}`,
@@ -23,6 +18,5 @@ export const useCart = (email) => {
       return response.json();
     },
   });
-
-  return [cart, refetch, isLoading];
+  return [isAdmin, isAdminLoading];
 };

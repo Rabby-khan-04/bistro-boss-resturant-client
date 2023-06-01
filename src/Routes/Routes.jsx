@@ -19,6 +19,7 @@ import Reservation from "../Pages/Dashboard/Reservation/Reservation";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import AddReview from "../Pages/Dashboard/AddReview/AddReview";
 import MyBookings from "../Pages/Dashboard/MyBookings/MyBookings";
+import AdminRoutes from "./AdminRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -89,23 +90,43 @@ export const router = createBrowserRouter([
       },
       {
         path: "all-users",
-        element: <AllUsers />,
+        element: (
+          <AdminRoutes>
+            <AllUsers />
+          </AdminRoutes>
+        ),
       },
       {
         path: "admin-home",
-        element: <AdminHome />,
+        element: (
+          <AdminRoutes>
+            <AdminHome />
+          </AdminRoutes>
+        ),
       },
       {
         path: "add-item",
-        element: <AddItems />,
+        element: (
+          <AdminRoutes>
+            <AddItems />
+          </AdminRoutes>
+        ),
       },
       {
         path: "manage-items",
-        element: <ManageItems />,
+        element: (
+          <AdminRoutes>
+            <ManageItems />
+          </AdminRoutes>
+        ),
       },
       {
         path: "manage-bookings",
-        element: <ManageBookings />,
+        element: (
+          <AdminRoutes>
+            <ManageBookings />
+          </AdminRoutes>
+        ),
       },
     ],
   },
