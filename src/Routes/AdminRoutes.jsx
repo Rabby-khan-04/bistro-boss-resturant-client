@@ -1,10 +1,10 @@
 import React from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../Hooks/useAuth";
 import { useAdmin } from "../Hooks/useAdmin";
 
 const AdminRoutes = ({ children }) => {
-  const { user, loading } = useAuth();
+  const { user, loading, logOutUser } = useAuth();
   const [isAdmin, isAdminLoading] = useAdmin();
   const location = useLocation();
 
@@ -17,6 +17,8 @@ const AdminRoutes = ({ children }) => {
   } else if (user && isAdmin?.admin) {
     return children;
   }
+
+  logOutUser();
   return <Navigate state={{ from: location }} replace to="/login"></Navigate>;
 };
 
