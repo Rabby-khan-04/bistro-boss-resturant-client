@@ -20,6 +20,7 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import AddReview from "../Pages/Dashboard/AddReview/AddReview";
 import MyBookings from "../Pages/Dashboard/MyBookings/MyBookings";
 import AdminRoutes from "./AdminRoutes";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ export const router = createBrowserRouter([
       {
         path: "payment-history",
         element: <PaymentHistory />,
+      },
+      {
+        path: "payment",
+        element: <Payment />,
       },
       {
         path: "add-review",

@@ -4,12 +4,16 @@ import { useCart } from "../../../Hooks/useCart";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const MyCart = () => {
   const [cart, refetch, isLoading] = useCart();
   const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+  const navigate = useNavigate();
 
-  console.log(isLoading);
+  const goToPayment = () => {
+    navigate("/dashboard/payment");
+  };
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -54,7 +58,10 @@ const MyCart = () => {
             <div className="font-cinzel font-semibold text-neutral flex justify-between items-center mb-12">
               <p className="text-3xl">Total orders: {cart.length}</p>
               <p className="text-3xl">total price: ${totalPrice}</p>
-              <button className="btn bg-gold border-gold text-white text-xl">
+              <button
+                className="btn bg-gold border-gold text-white text-xl"
+                onClick={goToPayment}
+              >
                 Pay
               </button>
             </div>

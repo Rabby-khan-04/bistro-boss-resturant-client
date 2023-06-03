@@ -11,14 +11,18 @@ import { HiEnvelope, HiUserGroup } from "react-icons/hi2";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { useCart } from "../Hooks/useCart";
 import { useAdmin } from "../Hooks/useAdmin";
+import { useAuth } from "../Hooks/useAuth";
 
 const Dashboard = () => {
   const [cart] = useCart();
   const [isAdmin, isAdminLoading] = useAdmin();
+  const { loading } = useAuth();
 
   // const isAdmin = true;
 
-  if (isAdminLoading) {
+  console.log("Hittin Dashboard");
+
+  if (isAdminLoading || loading) {
     return (
       <div className=" flex justify-center items-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>

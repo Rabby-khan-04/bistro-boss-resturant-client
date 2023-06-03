@@ -54,9 +54,9 @@ const AuthProvider = ({ children }) => {
             const token = data.data.token;
             // console.log(token);
             localStorage.setItem("user-access-token", token);
-            setLoading(false);
           });
       }
+      setLoading(false);
     });
     return () => unsubscribe();
   }, []);

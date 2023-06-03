@@ -7,7 +7,7 @@ const SectionTitle = ({ heading, subHeading, color }) => {
       <h2
         className={`text-neutral text-[40px] font-medium border-y-4 border-gray pt-5 pb-6 text-${
           color ? color : "neutral"
-        }`}
+        } uppercase`}
       >
         {heading}
       </h2>
