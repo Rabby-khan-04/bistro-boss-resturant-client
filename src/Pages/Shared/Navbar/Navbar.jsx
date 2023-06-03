@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { GiShoppingCart } from "react-icons/gi";
 import { useCart } from "../../../Hooks/useCart";
 import { useAuth } from "../../../Hooks/useAuth";
+import { useAdmin } from "../../../Hooks/useAdmin";
 
 const Navbar = () => {
+  const [isAdmin, isAdminLoading] = useAdmin();
   const [scrollY, setScrollY] = useState(0);
   const { user, logOutUser } = useAuth();
   const [cart, refetch, isLoading] = useCart();
@@ -27,7 +29,11 @@ const Navbar = () => {
         <Link to="/contact">Contact Us</Link>
       </li>
       <li>
-        <Link to="/dashboard">Dashboard</Link>
+        <Link
+          to={isAdmin?.admin ? "/dashboard/admin-home" : "/dashboard/user-home"}
+        >
+          Dashboard
+        </Link>
       </li>
       <li>
         <Link to="/menu">Our Menu</Link>

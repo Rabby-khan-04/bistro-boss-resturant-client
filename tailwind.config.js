@@ -17,6 +17,14 @@ export default {
       "dark-gray": "#737373",
       rating: "#CD9003",
       gold: "#D1A054",
+      "revenu-1": "#BB34F5",
+      "revenu-2": "#FCDBFF",
+      "customers-1": "#D3A256",
+      "customers-2": "#FDE8C0",
+      "products-1": "#FE4880",
+      "products-2": "#FECDE9",
+      "orders-1": "#6AAEFF",
+      "orders-2": "#B6F7FF",
     },
     extend: {
       backgroundImage: {
